@@ -1600,34 +1600,6 @@ ELSE  --Output to database is not set output to client app
 
 
 
-        IF @Debug = 1
-            BEGIN
-
-                SELECT '#deadlock_data' AS table_name, *
-                FROM   #deadlock_data AS dd
-				OPTION ( RECOMPILE );
-
-                SELECT '#deadlock_resource' AS table_name, *
-                FROM   #deadlock_resource AS dr
-				OPTION ( RECOMPILE );
-
-                SELECT '#deadlock_resource_parallel' AS table_name, *
-                FROM   #deadlock_resource_parallel AS drp
-				OPTION ( RECOMPILE );
-
-                SELECT '#deadlock_owner_waiter' AS table_name, *
-                FROM   #deadlock_owner_waiter AS dow
-				OPTION ( RECOMPILE );
-
-                SELECT '#deadlock_process' AS table_name, *
-                FROM   #deadlock_process AS dp
-				OPTION ( RECOMPILE );
-
-                SELECT '#deadlock_stack' AS table_name, *
-                FROM   #deadlock_stack AS ds
-				OPTION ( RECOMPILE );
-				
-            END; -- End debug
 
     END; --Final End
 
